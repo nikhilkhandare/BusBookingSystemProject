@@ -1,0 +1,71 @@
+
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-lg-7 mx-auto">
+          <div class="bg-white rounded-lg shadow-sm p-5">
+            <div class="jumbotron">
+                <h1 class="display-4">Enter Card Details</h1>
+                <hr>
+            </div>
+            <!-- End -->
+  
+  
+            <!-- Credit card form content -->
+            <div class="tab-content">
+  
+              <!-- credit card info-->
+              <form [formGroup]="PaymentForm" #usersForm="ngForm" (ngSubmit)="getUserFormData(PaymentForm.value)" role="form">
+                  <div class="form-group">
+                    <label for="username">Full name (on the card)</label>
+                    <input type="text" name="username" ng-model formControlName="username" placeholder="Enter Name as on the Card" required class="form-control">
+                  </div>
+                  <span style="color: red;" *ngIf="username_valid && username_valid.invalid && username_valid.touched">Enter Valid Username</span>
+                  <br>
+                  <div class="form-group">
+                    <label for="cardNumber">Card number</label>
+                    <div class="input-group">
+                      <input type="text" name="cardNumber" ng-Model formControlName="cardNumber" placeholder="Your card number" class="form-control"
+                        required>
+                      
+                    </div>
+                  </div>
+                  <span style="color: red;" *ngIf="cardNumber_valid && cardNumber_valid.invalid && cardNumber_valid.touched">Enter Valid Card Number</span>
+                <br>
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <div class="form-group">
+                        <label>
+                          <span class="hidden-xs">Expiration</span>
+                        </label>
+                        <div class="input-group">
+                          <input type="text" placeholder="MM" ng-Model formControlName="month" name="month" class="form-control" required>
+                          <span style="color: red;" *ngIf="month_valid && month_valid.invalid && month_valid.touched">Enter Valid Month</span>
+                          <input type="text" placeholder="YYYY" name="year" ng-Model formControlName="year" class="form-control" required>
+                          <span style="color: red;" *ngIf="year_valid && year_valid.invalid && year_valid.touched">Enter Valid Year</span>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="col-sm-4">
+                      <div class="form-group mb-4">
+                        <label title="Three-digits code on the back of your card">CVV
+                        </label>
+                        <input type="text" placeholder="Enter CVV" name="cvv" ng-Model formControlName="cvv" required class="form-control"> 
+                      </div>
+                      <span style="color: red;" *ngIf="cvv_valid && cvv_valid.invalid && cvv_valid.touched">Enter Valid CVV</span>
+                    </div>
+  
+  
+  
+                  </div>
+                  <button type="button" class="subscribe btn btn-success btn-block btn-lg shadow-sm"> Confirm Payment</button>
+                </form>
+              </div>
+              <!-- End -->
+
+            <!-- End -->
+  
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,24 @@
+<h2>Ticket Details</h2>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Sr.no</th>
+        <th scope="col">Source</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+        <th scope="col">Book Now</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of ticket">
+        <th scope="row">{{item.ticket_id}}</th>
+        <td>{{item.source}}</td>
+        <td>{{item.destination}}</td>
+        <td>{{item.date}}</td>
+        <td>{{item.time}}</td>
+        <td><button type="submit" class="btn btn-success">Book Now</button></td>
+      </tr>
+    </tbody>
+  </table>
+  

@@ -1,0 +1,47 @@
+<div class="mx-auto" style="width: 1000px;">
+    <div class="jumbotron">
+        <h1 class="display-4">Registration</h1>
+        <hr>
+    </div>
+    <form [formGroup]="registerForm" #usersForm="ngForm" (ngSubmit)="getUserFormData(usersForm.value)">
+        <div class="form-group col-sm-10">
+        <label for="userName">Username</label>
+        <input type="text" ngModel class="form-control" formControlName="username" id="userName" name="username" placeholder="Enter userName">
+        </div>
+        <span style="color: red;" *ngIf="username_valid && username_valid.invalid && username_valid.touched">Enter Valid Username</span>
+        <br>
+        <div class="form-group col-sm-10">
+        <label for="gender">Gender</label>
+        <input type="text" ngModel class="form-control"  formControlName="gender" id="gender" name="gender"  placeholder="Enter Gender">
+        </div>
+        <span style="color: red;" *ngIf="gender_valid && gender_valid.invalid && gender_valid.touched">Please Enter Gender</span>
+        <br>
+        <div class="form-group col-sm-10">
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" ngModel class="form-control" maxlength="10" id="mobile" formControlName="mobile"  name ="mobile" placeholder="Enter Mobile Number ">
+        </div>
+        <span style="color: red;" *ngIf="mobile_valid && mobile_valid.invalid && mobile_valid.touched">Enter Mobile Number</span>
+        <br>
+        <div class="form-group col-sm-10">
+        <label for="age">Age</label>
+        <input type="number" ngModel class="form-control" id="age" formControlName="age"  name ="age" placeholder="Enter Age ">
+        </div>
+        <span style="color: red;" *ngIf="age_valid && age_valid.invalid && age_valid.touched">Enter Valid Age</span>
+        <br>
+        <div class="form-group col-sm-10">
+        <label for="email">Email</label>
+        <input type="email" ngModel class="form-control" id="email" name="email" formControlName="email" placeholder="email">
+        </div>
+        <span style="color: red;" *ngIf="email_valid && email_valid.invalid && email_valid.touched">Enter Valid Email</span>
+        <br>
+        <div class="form-group col-sm-10">
+        <label for="password">Password</label>
+        <input type="password" ngModel class="form-control" formControlName="password" id="password" name="password" placeholder="Password">
+        </div>
+        <span style="color: red;" *ngIf="password_valid && password_valid.invalid && password_valid.touched">Enter Character between 6 to 16 with special character and capital letter </span>
+        <br>
+        
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

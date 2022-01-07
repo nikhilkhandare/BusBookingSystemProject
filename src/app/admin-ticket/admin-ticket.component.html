@@ -1,0 +1,114 @@
+<section class="">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-12 col-xl-8">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5"><h1>ADD A TICKET</h1></h3>
+              <hr>
+
+              <form [formGroup]="addTicketForm" #usersForm="ngForm" (ngSubmit)="getTicketFormData(usersForm.value)">
+  
+                <div class="row">
+                  <div class="col-md-12 mb-4">
+                    <div class="form-outline">
+                      <input type="text" name="busname" ngModel id="busname" class="form-control form-control-lg" formControlName="bus_name" required />
+                      <label class="form-label" for="busname"><b>bus_name</b></label>
+                    </div>
+                  </div>
+                  <span style="color: red;" *ngIf="busname_valid && busname_valid.invalid && busname_valid.touched">Enter Valid busname</span>
+                  <div class="col-md-12 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" name="bus_number" ngModel id="busnumber" class="form-control form-control-lg" 
+                      formControlName="bus_no" required />
+                      <label class="form-label" for="busnumber"><b>bus_no</b></label>
+                    </div>
+  
+                  </div>
+                  <span style="color: red;" *ngIf="busnumber_valid && busnumber_valid.invalid && busnumber_valid.touched">Enter Valid bus number</span>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-12 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" name="date" ngModel id="date" class="form-control form-control-lg"  placeholder="DD/MM/YY" required formControlName="date" />
+                      <label class="form-label" for="date"  placeholder="DD/MM/YY" required><b>Date</b></label>
+                    </div>
+  
+                  </div>
+                  <span style="color: red;" *ngIf="date_valid && date_valid.invalid && date_valid.touched">Enter Valid date</span>
+                  <div class="col-md-12 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" name="time" ngModel id="time" class="form-control form-control-lg"  placeholder="10:00 AM"required formControlName="time"/>
+                      <label class="form-label" for="time"><b>Time</b></label>
+                    </div>
+  
+                  </div>
+                  <span style="color: red;" *ngIf="time_valid && time_valid.invalid && time_valid.touched">Enter Valid time</span>
+                </div>
+  
+                <div class="col-md-12 mb-4">
+  
+                  <div class="form-outline">
+                    <input type="text" name="price" ngModel id="price" formControlName="price"class="form-control form-control-lg" />
+                    <label class="form-label" for="price"  required><b>Price</b></label>
+                  </div>
+
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" name="source" ngModel id="source" class="form-control form-control-lg" formControlName="source" required />
+                      <label class="form-label" for="source"><b>Source</b></label>
+                    </div>
+  
+                  </div>
+                  <span style="color: red;" *ngIf="source_valid && source_valid.invalid && source_valid.touched">Enter Valid Source</span>
+                  <div class="col-md-12 mb-4">
+  
+                    <div class="form-outline">
+                      <input type="text" name="destination" ngModel id="destination" class="form-control form-control-lg" formControlName="destination"  required />
+                      <label class="form-label" for="destination"><b>Destination</b></label>
+                    </div>
+  
+                  </div>
+                  <span style="color: red;" *ngIf="destination_valid && destination_valid.invalid && destination_valid.touched">Enter Valid Destination</span>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-12 mb-4">
+                    <div class="form-outline">
+                      <input type="number" name="remainingseats" ngModel id="remainingseats"  formControlName="remaining_seats" class="form-control form-control-lg" />
+                      <label class="form-label" for="remainingseats"  required><b>remaining_seats</b></label>
+                    </div>
+  
+                  </div>
+                  <span style="color: red;" *ngIf="rem_seats_valid && rem_seats_valid.invalid && rem_seats_valid.touched">Enter Valid Remaining Seats</span>
+                  
+                  <span style="color: red;" *ngIf="price_valid && price_valid.invalid && price_valid.touched">Enter Valid Price</span>
+                </div>
+  
+              
+                <div class=" row  form-outline">
+                  <input class="btn btn-success  btn-lg" type="submit" value="Add Ticket" /><br>
+                </div>
+                <br>
+                <div class=" row  form-outline">
+                  <input class="btn btn-primary btn-lg" type="submit" value="Update Ticket"(ngSubmit)="updateTicketFormData(usersForm.value)" />               
+                </div>
+                <br>
+                <div class=" row form-outline">
+                <input class="btn btn-danger btn-lg" type="submit" value="Delete Ticket"  (ngSubmit)="deleteTicketFormData(usersForm.value)"/>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

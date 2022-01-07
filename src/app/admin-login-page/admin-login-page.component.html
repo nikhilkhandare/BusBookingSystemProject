@@ -1,0 +1,40 @@
+
+  <div class="container py-5">
+    <div class="row">
+        <div class="col-lg-7 mx-auto">
+            <div class="bg-white rounded-lg shadow-sm p-5">
+              <div class="jumbotron">
+                <h1 class="display-4">Admin Login Form</h1>
+                <hr>
+            </div>
+                <!-- End -->
+
+
+                <!-- Credit card form content -->
+                <div class="tab-content">
+
+                    <!-- Login info-->
+                    <div id="nav-tab-card" class="tab-pane fade show active">
+                      <form [formGroup]="AdminLoginPageForm" #usersForm="ngForm" >
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" name="username" ng-model formControlName="username" placeholder="Enter Username" required class="form-control">
+                            </div>
+                            <span style="color: red;" *ngIf="username_valid && username_valid.invalid && username_valid.touched">Enter Valid Username</span>
+                            <br>
+                            <span><span style="color: red;">*</span> Character must conatins Alpabhetic,numeric,symbol & character between 6 - 16</span>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <div class="input-group">
+                                    <input type="text" name="password" ng-Model formControlName="password" placeholder="Enter Password" class="form-control"
+                                        required>
+                                </div>
+                            </div>
+                            
+                            <span style="color: red;" *ngIf="password_valid && password_valid.invalid && password_valid.touched">Enter Valid Password</span>
+                            <br>
+                
+                            <div class="row">
+                              <button type="button" (click)="loginAdmin()" [routerLink]="['/addticket']" routerLinkActive="router-link-active"   class="subscribe btn btn-success btn-block  shadow-sm">Login </button>
+                            </div>
+

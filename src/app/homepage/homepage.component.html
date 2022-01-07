@@ -1,6 +1,6 @@
-<!-- 
+
 <!-- <img src="assets/Images/logo.jpg"> -->
-<!-- <section class="header">
+<section class="header">
     <nav>
         <a href="app.component.html"></a>
         <div class="text-logo">
@@ -14,8 +14,7 @@
                 <li><a href="#">COMPANY</a></li>
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="#" [routerLink]="['/login']" routerLinkActive="router-link-active" >LOGIN</a></li>
-                <li><a href="ragister.component.html">SIGNUP</a></li>
-                    
+                <li><a href="#" [routerLink]="['/register']" routerLinkActive="router-link-active" >SIGNUP</a></li>
             </ul>   
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -29,17 +28,12 @@
     </div>
     
 </section> 
-<!-Toggle Menu----->
 <script>
-    // var navlinks = document.getElementById("navlinks");
-    // function showMenu(){
-    //     navlinks.style.right = "0";
-    // }
-    // function hideMenu(){
-    //     navlinks.style.right = "-200px";
-    // }
+    var navlinks = document.getElementById("navlinks");
+    function showMenu(){
+        navlinks.style.right = "0";
+    }
+    function hideMenu(){
+        navlinks.style.right = "-200px";
+    }
 </script> 
-
-
-
-<router-outlet></router-outlet> 
